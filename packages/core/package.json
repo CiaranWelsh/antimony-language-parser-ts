@@ -1,0 +1,30 @@
+{
+  "name": "@donaldpipowitch/vscode-extension-core",
+  "description": "Exports some useful APIs to get information about VS Code extensions.",
+  "author": "Donald Pipowitch",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "dist",
+  "typings": "dist",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donaldpipowitch/how-to-create-a-language-server-and-vscode-extension"
+  },
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "tsc -b src",
+    "watch": "tsc -b src -w",
+    "unit": "jest -c tests/jest.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.8",
+    "@types/node": "^8.0.0",
+    "axios-mock-adapter": "^1.15.0",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.3"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "extensionHost",
+      "request": "launch",
+      "name": "Launch Client",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceRoot}/packages/client",
+        "${workspaceRoot}/example"
+      ],
+      "stopOnEntry": false,
+      "sourceMaps": true,
+      "outFiles": ["${workspaceRoot}/packages/client/dist/**/*.js"],
+      "preLaunchTask": "npm: build"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Server",
+      "address": "localhost",
+      "protocol": "inspector",
+      "port": 6009,
+      "sourceMaps": true,
+      "outFiles": ["${workspaceRoot}/packages/server/dist/**/*.js"],
+      "timeout": 30000
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Client + Server",
+      "configurations": ["Launch Client", "Attach to Server"]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@donaldpipowitch/vscode-extension-server",
+  "description": "A .vscode/extensions.json language server.",
+  "author": "Donald Pipowitch",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "dist",
+  "typings": "dist",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donaldpipowitch/how-to-create-a-language-server-and-vscode-extension"
+  },
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "tsc -b src",
+    "watch": "tsc -b src -w",
+    "unit": "jest -c tests/jest.config.js"
+  },
+  "dependencies": {
+    "@donaldpipowitch/vscode-extension-core": "^1.0.0",
+    "jsonc-parser": "^2.0.2",
+    "vscode-languageserver": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.8",
+    "@types/node": "^8.0.0",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.3"
+  }
+}
